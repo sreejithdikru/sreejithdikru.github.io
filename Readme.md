@@ -13,6 +13,9 @@ Foxlab Makerspace in association with GTech - Group of Technology Companies in K
 
 **Setup**
 
+![1](https://user-images.githubusercontent.com/80213907/132119329-dc13fdd8-9654-4ad7-b878-0814a6f13167.jpeg)
+
+
 code
 
 ```
@@ -43,6 +46,9 @@ delay(1000); // wait for a second
 
 **Setup**
 
+![2](https://user-images.githubusercontent.com/80213907/132119355-f173c446-5364-4dcb-89de-502519db0687.jpeg)
+
+
 code
 ``` 
 int redled =10; // initialize digital pin 8.
@@ -71,5 +77,46 @@ delay(500);// wait 0.5 second
 digitalWrite(redled, HIGH);// turn on red LED
 delay(5000);// wait 5 seconds
 digitalWrite(redled, LOW);// turn off red LED
+}
+```
+
+### Expirement 3: LED Chasing Effect**
+**Components Required**
+- Led *6
+- Arduino board *1
+- 220Ω resistor *6
+- Breadboard *1
+- USB cable*1
+- Breadboard wire *13
+
+**Setup**
+
+![3](https://user-images.githubusercontent.com/80213907/132119452-0b2affbf-d818-46a8-846f-33dd6500eb28.jpeg)
+
+
+code 
+
+```
+int BASE = 2 ;  // the I/O pin for the first LED
+int NUM = 6;   // number of LEDs
+void setup()
+{
+   for (int i = BASE; i < BASE + NUM; i ++) 
+   {
+     pinMode(i, OUTPUT);   // set I/O pins as output
+   }
+}
+void loop()
+{
+   for (int i = BASE; i < BASE + NUM; i ++) 
+   {
+     digitalWrite(i, LOW);    // set I/O pins as “low”, turn off LEDs one by one.
+     delay(200);        // delay
+   }
+   for (int i = BASE; i < BASE + NUM; i ++) 
+   {
+     digitalWrite(i, HIGH);    // set I/O pins as “high”, turn on LEDs one by one
+     delay(200);        // delay
+   }  
 }
 ```
